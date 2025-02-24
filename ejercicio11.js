@@ -1,29 +1,21 @@
-// const readline = require("readline");
+alert("Diagnóstico de problemas en la computadora");
 
-// const rl = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout
-// });
+let pitido, disco;
 
-// console.log("Diagnóstico de problemas en la computadora");
+while (true) {
+  pitido = prompt("¿La computadora emite un pitido al iniciar? (si/no):");
+  disco = prompt("¿El disco duro gira? (si/no):");
 
-// rl.question("¿La computadora emite un pitido al iniciar? (si/no): ", (pitido) => {
-//   rl.question("¿El disco duro gira? (si/no): ", (disco) => {
-//     pitido = pitido.toLowerCase();
-//     disco = disco.toLowerCase();
+  if ((pitido === "si" || pitido === "no") && (disco === "si" || disco === "no")) {
+    break; 
+  }
 
-//     if (pitido === "si" && disco === "si") {
-//       console.log(" La computadora está averiada. Póngase en contacto con el técnico de apoyo.");
-//     } else if (pitido === "si" && disco === "no") {
-//       console.log(" Verificar contactos de la unidad.");
-//     } else if (pitido === "no" && disco === "no") {
-//       console.log(" Traiga la computadora para repararla en la central.");
-//     } else if (pitido === "no" && disco === "si") {
-//       console.log(" Compruebe las conexiones de altavoces.");
-//     } else {
-//       console.log(" Respuesta inválida. Use 'si' o 'no'.");
-//     }
+  alert("Por favor, responde solo con 'si' o 'no'.");
+}
 
-//     rl.close();
-//   });
-// });
+alert(
+  pitido === "si" && disco === "si" ? "La computadora está averiada. Póngase en contacto con el técnico de apoyo." :
+  pitido === "si" && disco === "no" ? "Verificar contactos de la unidad." :
+  pitido === "no" && disco === "no" ? "Traiga la computadora para repararla en la central." :
+  "Compruebe las conexiones de altavoces."
+);

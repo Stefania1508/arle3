@@ -1,20 +1,20 @@
-// const readline = require("readline");
+const modelosDefectuosos = [119, 179, 189, 190, 191, 192, 193, 194, 195, 221, 780];
 
-// const rl = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout
-// });
+let modelo;
 
-// const modelosDefectuosos = [119, 179, 189, 190, 191, 192, 193, 194, 195, 221, 780];
+while (true) {
+  modelo = prompt("Ingrese el número de modelo de su automóvil:");
+  
+  if (modelo && modelo == Number(modelo)) {
+    modelo = Number(modelo);
+    break; 
+  }
 
-// rl.question("Ingrese el número de modelo de su automóvil: ", (modelo) => {
-//   modelo = Number(modelo);
+  alert("Por favor, ingrese solo números.");
+}
 
-//   if (modelosDefectuosos.includes(modelo)) {
-//     console.log(" El automóvil está defectuoso, llevar a garantía.");
-//   } else {
-//     console.log(" Su automóvil no está defectuoso.");
-//   }
-
-//   rl.close();
-// });
+alert(
+  modelosDefectuosos.includes(modelo)
+    ? "El automóvil está defectuoso, llevar a garantía."
+    : "Su automóvil no está defectuoso."
+);
